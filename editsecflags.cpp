@@ -2,7 +2,6 @@
 #include <imagehlp.h>
 #include <iostream>
 
-
 BOOL EditSecFlags(LPCSTR path, bool ASLR, bool DEP) {
 
 	LOADED_IMAGE PE;
