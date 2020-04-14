@@ -27,7 +27,7 @@ int main (int argc , char** argv) {
 		std::cout << "\nThis program edit the security flags ASLR & DEP of 32b/64b Portable Executable files.";
 		std::cout << "\n  Usage: editsecflags pathfilename ASLR DEP";
 		std::cout << "\n  ASLR/DEP : 0(disable) 1(enable)";
-		std::cout << "\n  Example to disable ASLR & DEP: editsecflags pathfilename 0 0\n";
+		std::cout << "\n  Example to disable ASLR & DEP: editsecflags "c:\teste.exe" 0 0\n";
 		return EXIT_FAILURE;
 	}
 
