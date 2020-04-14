@@ -15,7 +15,7 @@ BOOL EditSecFlags(LPCSTR path, bool ASLR, bool DEP) {
 
 		UnMapAndLoad(&PE);
         	return EXIT_SUCCESS;
-    } else
+	} else
 		return EXIT_FAILURE;
 }
 
