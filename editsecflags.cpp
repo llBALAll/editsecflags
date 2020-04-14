@@ -7,14 +7,14 @@ BOOL EditSecFlags(LPCSTR path, bool ASLR, bool DEP) {
 	LOADED_IMAGE PE;
 
 	if (MapAndLoad(path, 0, &PE, 0, 0))	{
-	if (ASLR) PE.FileHeader->OptionalHeader.DllCharacteristics |= IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE;
-        else PE.FileHeader->OptionalHeader.DllCharacteristics &= ~IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE;
+		if (ASLR) PE.FileHeader->OptionalHeader.DllCharacteristics |= IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE;
+		else PE.FileHeader->OptionalHeader.DllCharacteristics &= ~IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE;
 
-        if (DEP) PE.FileHeader->OptionalHeader.DllCharacteristics |= IMAGE_DLLCHARACTERISTICS_NX_COMPAT;
-        else PE.FileHeader->OptionalHeader.DllCharacteristics &= ~IMAGE_DLLCHARACTERISTICS_NX_COMPAT;
+		if (DEP) PE.FileHeader->OptionalHeader.DllCharacteristics |= IMAGE_DLLCHARACTERISTICS_NX_COMPAT;
+		else PE.FileHeader->OptionalHeader.DllCharacteristics &= ~IMAGE_DLLCHARACTERISTICS_NX_COMPAT;
 
 		UnMapAndLoad(&PE);
-        return EXIT_SUCCESS;
+        	return EXIT_SUCCESS;
     } else
 		return EXIT_FAILURE;
 }
