@@ -33,6 +33,7 @@ int main (int argc , char** argv) {
 
 	if (EditSecFlags(argv[1], atoi(argv[2]), atoi(argv[3])) == EXIT_SUCCESS) {
 		std::cout << "Flags changed.";
+		return EXIT_SUCCESS;
 	} else {
 		std::cout << "Error: can not change flags!";
 		return EXIT_FAILURE;
